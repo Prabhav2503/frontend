@@ -34,7 +34,7 @@ const RegisterMentor = () => {
     }
     let fieldsToValidate = [];
     if (currentStep === 1) fieldsToValidate = ['name', 'mobile', 'email'];
-    if (currentStep === 2) fieldsToValidate = ['graduation_year', 'department', 'profession', 'company'];
+    if (currentStep === 2) fieldsToValidate = ['graduation_year', 'department', 'profession'];
     if (currentStep === 3) fieldsToValidate = ['time_window'];
 
     const isStepValid = await trigger(fieldsToValidate);
@@ -252,7 +252,7 @@ const RegisterMentor = () => {
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-white/90">Company Name</label>
                       <input 
-                        {...register("company", { required: "Company name is required" })}
+                        {...register("company")}
                         className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                         placeholder="e.g. Google / Microsoft"
                       />
